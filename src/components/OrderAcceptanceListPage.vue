@@ -24,8 +24,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <b-button type="button" class="btn btn-secondary" @click="showModal = false" variant="outline-danger">아니요</b-button>
-                    <b-button type="button" class="btn btn-primary" href="#/orderAcceptanceCompletePage" variant="outline-success">네</b-button>
+                    <b-button type="button" class="btn btn-secondary col-md-2" size="" @click="showModal = false" variant="outline-danger">아니요</b-button>
+                    <b-button type="button" class="btn btn-primary col-md-2" size="" href="#/orderAcceptanceCompletePage" variant="outline-success">네</b-button>
                 </div>
             </div>
         </div>

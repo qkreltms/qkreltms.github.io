@@ -75,15 +75,15 @@
 
 
       </b-form-group>
-      <b-button type="button" class="btn btn-secondary" variant="outline-danger">취소</b-button>
-      <b-button type="button" class="btn btn-primary" href="#/orderAcceptanceListPage" variant="outline-success">확인</b-button>
+      <b-button type="button" class="btn btn-secondary col-md-2" size="" variant="outline-danger">취소</b-button>
+      <b-button type="button" class="btn btn-primary col-md-2" size="" href="#/orderAcceptanceListPage" variant="outline-success">확인</b-button>
     </b-form>
   </div>
 
   </b-col>
         <b-col>
           <b-img-lazy src="/src/assets/b.jpg" center fluid-grow width="600" height="400" blank-color="#bbb" alt="img" class="my-5" />
-        <
+
           </b-col>
     </b-row>
 </b-container>
