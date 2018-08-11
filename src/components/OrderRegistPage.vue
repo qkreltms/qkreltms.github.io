@@ -25,7 +25,7 @@
    <div>
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
       <b-form-group id="exampleInputGroup1"
-                    label="Email address"
+                    label="이메일"
                     label-for="exampleInput1">
         <b-form-input id="exampleInput1"
                       type="email"
@@ -45,49 +45,82 @@
         </b-form-input>
       </b-form-group>
       <b-form-group id="exampleInputGroup3"
-                    label="잃어버린 물품"
+                    label="간략한 설명"
                     label-for="exampleInput3">
-        <b-form-select id="exampleInput3"
-                      :options="foods"
-                      required
-                      v-model="form.food">
-        </b-form-select>
+       <b-form-input
+                      type="text"
+                      placeholder="잃어버린것 원하는것">
+       </b-form-input>
+
+
+
+<b-container class="bv-example-row">
+    <b-row class="mb-3">
+    </b-row>
+
+    <b-row>
+        <b-col sm="4">
+            <b-input-group  prepend="사례금" append="원">
+            <b-form-input value="1000" class="text-right"></b-form-input>
+           </b-input-group>
+        </b-col>
+        <b-col sm="4">
+           <b-input-group prepend="기한 설정">
+           <date-picker v-model="date" :config="config"></date-picker>
+            </b-input-group>
+        </b-col>
+    </b-row>
+
+</b-container>
+
+
       </b-form-group>
-      <b-button type="submit" variant="primary" href="#/orderCompletePage">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
+      <b-button type="button" class="btn btn-secondary" variant="outline-danger">취소</b-button>
+      <b-button type="button" class="btn btn-primary" href="#/orderAcceptanceListPage" variant="outline-success">확인</b-button>
     </b-form>
   </div>
+
   </b-col>
         <b-col>
-             <img src="\src\assets\logo.png" center fluid-grow width="600" height="400" blank-color="#bbb" alt="img" class="my-5">
+          <b-img-lazy src="/src/assets/b.jpg" center fluid-grow width="600" height="400" blank-color="#bbb" alt="img" class="my-5" />
+        <
           </b-col>
     </b-row>
 </b-container>
 </template>
 
 
-<script>
+<script type="text/javascript">
+
 export default {
   data () {
     return {
+       date: new Date(),
+        config: {
+          format: 'DD/MM/YYYY',
+          useCurrent: false,
+        },
+
       form: {
         email: '',
         name: '',
         food: null,
         checked: []
       },
-      foods: [
-        { text: '구하고싶은 물품을 선택하세요', value: null },
-        '카메라', '핸드폰', '카드', '직접입력'
-      ],
+
       show: true
     }
+      components: {
+      datePicker
+      }
   },
   methods: {
+
     onSubmit (evt) {
       evt.preventDefault();
       alert(JSON.stringify(this.form));
     },
+
     onReset (evt) {
       evt.preventDefault();
       /* Reset our form values */
@@ -106,6 +139,7 @@ export default {
 
 <style>
 label { display:block; width:x; height:y; text-align:left;}
+
 .downBtn{
   float: bottom
 }
@@ -118,6 +152,9 @@ label { display:block; width:x; height:y; text-align:left;}
 }
 .picture {
   float: right;
+}
+.td input:focus, .td textarea:focus{
+    outline: none;
 }
 
 </style>
