@@ -1,27 +1,46 @@
 <template>
   <div id="app">
 
-    <!-- nav -->
-    <div>
-      <b-navbar type="dark" variant="success" toggleable>
-        <b-navbar-nav>
-          <b-nav-item herf="#" >
-            <div class="nav">logo</div>
-          </b-nav-item>
-          <b-nav-item class="nav">
-            <div class="nav">로그인</div>
-          </b-nav-item>
-          <b-nav-item class="nav">
-            <div class="nav">회원가입</div>
-          </b-nav-item>
-        </b-navbar-nav>
-      </b-navbar>
-    </div>
+    <b-navbar toggleable="md" type="dark">
 
-    <!-- button -->
-    <div>
-      <b-button href="#">의뢰</b-button>
-    </div>
+      <div>
+  <b-dropdown id="ddown-offset" offset="25" text="카테고리" class="m-2" variant="outline-success">
+    <b-dropdown-item href="#">프랑스</b-dropdown-item>
+    <b-dropdown-item href="#">미국</b-dropdown-item>
+    <b-dropdown-item href="#">영국</b-dropdown-item>
+  </b-dropdown>
+</div>
+
+      </b-navbar>
+
+
+<b-navbar toggleable="md" type="dark" class="nav">
+  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+
+  <b-navbar-brand href="#/">
+    <img src="./assets/logo.png" width="50" height="50" alt="logo">
+
+  </b-navbar-brand>
+
+
+  <b-navbar-nav class="ml-auto">
+    <h4>Via</h4>
+  </b-navbar-nav>
+
+  <b-collapse is-nav id="nav_collapse">
+    <!-- Right aligned nav items -->
+    <b-navbar-nav class="ml-auto">
+
+    </b-navbar-nav>
+  </b-collapse>
+
+  <b-nav-item right>
+    <!-- 프로필사진 -->
+    <img src="./assets/profile.jpg" width="40" height="40" class="rounded-circle">
+  </b-nav-item>
+</b-navbar>
+
+<router-view></router-view>
 
   </div>
 </template>
@@ -31,12 +50,14 @@
   import BootstrapVue from 'bootstrap-vue'
   import 'bootstrap/dist/css/bootstrap.css'
   import 'bootstrap-vue/dist/bootstrap-vue.css'
+  import MainPage from './components/MainPage.vue'
 
   Vue.use(BootstrapVue)
 
   export default {
     name: 'App',
-    components: {},
+    components: {
+    },
     data: function() {
       return {}
     }
@@ -45,6 +66,7 @@
 
 <style scoped>
   .nav {
-    color: white;
+    background-color: #3ac569;
+    color: black;
   }
 </style>
