@@ -9,7 +9,7 @@
           <b-button href="#/orderRegistPage" class="btn-lg btn-block" variant="outline-success" >의뢰하기</b-button>
         </b-col>
         <b-col>
-          <b-img-lazy src="/src/assets/a.jpg" center fluid-grow width="600" height="400" blank-color="#bbb" alt="img" class="my-5" />
+          <b-img-lazy :src="images.a" center fluid-grow width="600" height="400" blank-color="#bbb" alt="img" class="my-5" />
         </b-col>
     </b-row>
 
@@ -29,7 +29,7 @@
       <div>
     <b-card no-body
             style="max-width: 20rem;"
-            img-src="/src/assets/paris.jpg"
+            :img-src="images.paris"
             img-alt="Image"
             img-top>
         <h4 slot="header">카드가 급해염!!</h4>
@@ -46,7 +46,7 @@
       <div>
     <b-card no-body
             style="max-width: 20rem;"
-            img-src="/src/assets/america.jpg"
+            :img-src="images.america"
             img-alt="Image"
             img-top>
         <h4 slot="header">빨리 빨리요!!</h4>
@@ -63,7 +63,7 @@
       <div>
     <b-card no-body
             style="max-width: 20rem;"
-            img-src="/src/assets/turkey.jpg"
+            :img-src="images.turkey"
             img-alt="Image"
             img-top>
         <h4 slot="header">핸드폰이 급합니다!!</h4>
@@ -88,7 +88,7 @@
       <div>
     <b-card no-body
             style="max-width: 20rem;"
-            img-src="/src/assets/paris.jpg"
+            :img-src="images.paris"
             img-alt="Image"
             img-top>
         <h4 slot="header">카드가 급해염!!</h4>
@@ -105,7 +105,7 @@
       <div>
     <b-card no-body
             style="max-width: 20rem;"
-            img-src="/src/assets/america.jpg"
+            :img-src="images.america"
             img-alt="Image"
             img-top>
         <h4 slot="header">빨리 빨리요!!</h4>
@@ -122,7 +122,7 @@
       <div>
     <b-card no-body
             style="max-width: 20rem;"
-            img-src="/src/assets/turkey.jpg"
+            :img-src="images.turkey"
             img-alt="Image"
             img-top>
         <h4 slot="header">핸드폰이 급합니다!!</h4>
@@ -151,6 +151,12 @@ export default {
   name: 'MainPage',
   data () {
     return {
+      images: {
+        a: require('../assets/a.jpg'),
+        paris: require('../assets/paris.jpg'),
+        america: require('../assets/america.jpg'),
+        turkey: require('../assets/turkey.jpg')
+  }
     }
   },
   created () {

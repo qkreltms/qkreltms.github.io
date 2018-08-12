@@ -82,7 +82,7 @@
 
   </b-col>
         <b-col>
-          <b-img-lazy src="/src/assets/b.jpg" center fluid-grow width="600" height="400" blank-color="#bbb" alt="img" class="my-5" />
+          <b-img-lazy :src="images.b" center fluid-grow width="600" height="400" blank-color="#bbb" alt="img" class="my-5" />
 
           </b-col>
     </b-row>
@@ -95,6 +95,9 @@
 export default {
   data () {
     return {
+      images: {
+          b: require("../assets/b.jpg")
+       },
        date: new Date(),
         config: {
           format: 'DD/MM/YYYY',
