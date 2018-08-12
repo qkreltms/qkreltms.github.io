@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry: './src/main.js',
@@ -51,7 +52,20 @@ module.exports = {
     performance: {
         hints: false
     },
-    devtool: '#eval-source-map'
+    devtool: '#eval-source-map',
+    plugins: [
+      new webpack.ProvidePlugin({
+          Vue: ['vue/dist/vue.esm.js', 'default'],
+          jQuery: 'jquery',
+          'window.jQuery': 'jquery',
+          $: 'jquery',
+          moment: 'moment',
+      }),
+      new HtmlWebpackPlugin({
+          hash: true,
+          filename: 'index.html'
+      })
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
