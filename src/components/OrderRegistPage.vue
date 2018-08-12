@@ -76,7 +76,7 @@
 
       </b-form-group>
       <b-button type="button" class="btn btn-secondary col-md-2" size="" variant="outline-danger">취소</b-button>
-      <b-button type="button" class="btn btn-primary col-md-2" size="" href="#/orderAcceptanceListPage" variant="outline-success">확인</b-button>
+      <b-button type="button" class="btn btn-primary col-md-2" size="" href="#/orderCompletePage" variant="outline-success">확인</b-button>
     </b-form>
   </div>
 
